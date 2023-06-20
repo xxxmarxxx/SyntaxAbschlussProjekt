@@ -15,7 +15,7 @@ class Menu {
             printMenu(istEsEinKundeOderEinAdmin)
         }
     }
-
+    val produkt = mutableListOf<String>()
     fun printMenu(type: UserType) {
         if (type == UserType.ADMIN) {
             println("5 für Neues Produkt")
@@ -23,17 +23,27 @@ class Menu {
             println("7 für Löschen ein Produkt")
             println("8 Beenden")
 
-
             val adminInput = readln()
 
             when (adminInput) {
-                "5" -> println("Jetzt neues Produkt hinzufügen...")
-                "6" -> println("Jetzt Produkt ändern")
+                "5" -> {
+                    println("Jetzt neues Produkt hinzufügen...")
+                    val neueProdukt = readln()
+                    produkt.add(neueProdukt)
+                    println("Produkt '$neueProdukt' wurde hinzugefügt.")
+                }
+
+                "6" -> {
+                    println("Jetzt Produkt ändern")
+                    val aenderProdukt = readln()
+                }
+
                 "7" -> println("Jetzt Produkt löschen")
+
                 "8" -> beenden = true
             }
 
-        } else {
+        } else{
             println("1 - Künstler Produkt kaufen")
             println("2 - Künstler Produkt von Warenkorb löschen")
             println("3 - Meine warenkorb anzeigen")

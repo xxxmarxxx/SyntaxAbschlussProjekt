@@ -53,9 +53,14 @@ class Login {
                 }
 
                 "2" -> {
-                    println("Kunst löschen")
-                    val loeschenProdukt: String = readln()
-
+                    println("Geben Sie den Namen des Produkts ein, das Sie löschen möchten:")
+                    val loeschenProdukt = readLine()
+                    if (produkt.contains(loeschenProdukt)) {
+                        produkt.remove(loeschenProdukt)
+                        println("Produkt '$loeschenProdukt' wurde gelöscht.")
+                    } else {
+                        println("Das Produkt konnte nicht gefunden werden.")
+                    }
                 }
                 "3" -> {
                     println("Alle Bestellungen anzeigen")

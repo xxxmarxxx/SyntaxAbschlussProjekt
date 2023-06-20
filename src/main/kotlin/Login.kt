@@ -23,7 +23,9 @@ class Login {
             }
         }
     }
+
     val produkt = mutableListOf<String>()
+    val warenkorb = mutableListOf<String>()
     fun showCustomerMenu() {
         var beenden = false
         while (!beenden) {
@@ -49,16 +51,22 @@ class Login {
                     produkt.add(neueProdukt)
                     println("Produkt '$neueProdukt' wurde hinzugefügt.")
                 }
-                "2" -> println("Kunst löschen")
-                "3" -> println("Alle Bestellungen anzeigen")
+
+                "2" -> {
+                    println("Kunst löschen")
+                    val loeschenProdukt: String = readln()
+
+                }
+                "3" -> {
+                    println("Alle Bestellungen anzeigen")
+                    println("Alle produkte: $produkt")
+                }
+
                 "4" -> beenden = true
                 else -> println("Ungültige Auswahl. Bitte versuchen Sie es erneut.")
             }
         }
     }
-
-
-
 
 
 }

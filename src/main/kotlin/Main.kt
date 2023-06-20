@@ -13,7 +13,8 @@ fun main() {
 
     Login().loginIn()
 
-    println("ende")
+//    println("Wir haben Kunst dieser Künstler im Angebot: \n${Shop().kunstlerSortiment.keys}")
+    println("Danke für besuch bei appArt")
 //    ----- END LOGIN
 
 
@@ -21,11 +22,7 @@ fun main() {
 //    Menu().menu()
 
 
-
-
-
 //    Menu().printMenu(UserType.ADMIN)
 //    ------ END
 
 }
-

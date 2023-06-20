@@ -21,16 +21,5 @@ class Admin(username: String, password: String) : User(username, password, UserT
 
     }
 
-
-
-
-//    fun addNewProduct(product: Product) {
-//        products.add(product)
-//        println("\t${userName} hat das Produkt zum Shop hinzugefügt: $product")
-//    }
-
-
-
-
 }
 

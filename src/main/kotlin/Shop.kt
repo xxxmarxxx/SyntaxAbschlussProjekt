@@ -1,7 +1,6 @@
 class Shop {
 
-
-    val product1 = Product(1, "Acryl", "Boris", "\"the coder\"", 1990, 50.0, 80.0, "blabla", 1000.0, 1,)
+    val product1 = Product(1, "Acryl", "Boris", "\"the coder\"", 1990, 50.0, 80.0, "blabla", 1000.0, 1)
     val product2 = Product(2, "Aquarell", "Marcel", "the hit", 2010, 30.0, 30.0, "blablabla", 2000.0, 1)
     val product3 = Product(3, "Gouache", "Boris", "the hit", 2002, 20.0, 30.0, "blablabla", 2400.0, 1)
     val product4 = Product(4, "Tempera", "Gökhan", "the hit", 2004, 120.0, 90.0, "blablabla", 400.0, 1)
@@ -24,8 +23,13 @@ class Shop {
     val product21 = Product(21, "Digitale Bildbearbeitung", "Marcel", "the hit", 2017, 30.0, 50.0, "blablabla", 4000.0, 20)
     val product22 = Product(22, "Fotografie", "Johannes", "the hit", 2010, 20.0, 20.0, "blablabla", 300.0, 20)
     val product23 = Product(23, "NFT", "Sergej", "the hit", 2022, 20.0, 30.0, "blablabla", 230.0, 20)
-//TODO weiter machen
-    var products = mutableListOf<Product>(product1,product2,)
+
+    //TODO weiter machen
+    var products = mutableListOf<Product>(
+        product1, product2, product3, product4, product5, product6,
+        product7, product8, product9, product10, product11, product12, product13, product14, product15,
+        product16, product17, product18, product19, product20, product21, product22, product23
+    )
 
 
     fun removeProduct(product: Product, admin: Admin) {
@@ -44,36 +48,31 @@ class Shop {
     }
 
 
+   fun categoryArts(art: String): String {
+        val malerei = mutableListOf<String>("Acryl", "Aquarell", "Gouache", "Tempera", "Ölfarben")
+        val zeichnung = mutableListOf<String>(
+            "Bleistift",
+            "All-Stift",
+            "Farbstift",
+            "Pastellkreiden",
+            "Ölpastellkreiden",
+            "Zeichenkreide",
+            "Zeichenkohle",
+            "Silberstift",
+            "Feder und Tusche",
+            "Pinsel und Tusche",
+            "Andere Zeichentechniken"
+        )
+        val drucken = mutableListOf<String>("Hochdruck", "Tiefdruck", "Lithografie", "Siebdruck")
+        val digital = mutableListOf<String>("Digitale Bildbearbeitung", "Fotografie", "NFT")
 
-
-
-
-
-//   < fun categoryArts(art: String): String {
-//        val malerei = mutableListOf<String>("Acryl", "Aquarell", "Gouache", "Tempera", "Ölfarben")
-//        val zeichnung = mutableListOf<String>(
-//            "Bleistift",
-//            "All-Stift",
-//            "Farbstift",
-//            "Pastellkreiden",
-//            "Ölpastellkreiden",
-//            "Zeichenkreide",
-//            "Zeichenkohle",
-//            "Silberstift",
-//            "Feder und Tusche",
-//            "Pinsel und Tusche",
-//            "Andere Zeichentechniken"
-//        )
-//        val drucken = mutableListOf<String>("Hochdruck", "Tiefdruck", "Lithografie", "Siebdruck")
-//        val digital = mutableListOf<String>("Digitale Bildbearbeitung", "Fotografie", "NFT")
-//
-//        return when {
-//            art in malerei -> "[ Malerei ]"
-//            art in zeichnung -> "[ Zeichnung ]"
-//            art in drucken -> "[ Drucken ]"
-//            art in digital -> "[ Digital ]"
-//            else -> "Ungültiger Art"
-//        }
-//    }
+        return when {
+            art in malerei -> "[ Malerei ]"
+            art in zeichnung -> "[ Zeichnung ]"
+            art in drucken -> "[ Drucken ]"
+            art in digital -> "[ Digital ]"
+            else -> "Ungültiger Art"
+        }
+    }
 
 }

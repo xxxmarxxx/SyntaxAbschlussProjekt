@@ -47,8 +47,19 @@ class Shop {
         }
     }
 
+    val kunstlerSortiment = mutableMapOf(
+        "Dali" to 900.00,
+        "Modigliani" to 500.00,
+        "Picasso" to 700.00,
+        "Schiele" to 1700.00,
+        "Beksinski" to 1400.00,
+        "Banksy" to 10.99,
+        "Van Gogh" to 10.99
 
-   fun categoryArts(art: String): String {
+    )
+
+
+    fun categoryArts(art: String): String {
         val malerei = mutableListOf<String>("Acryl", "Aquarell", "Gouache", "Tempera", "Ölfarben")
         val zeichnung = mutableListOf<String>(
             "Bleistift",

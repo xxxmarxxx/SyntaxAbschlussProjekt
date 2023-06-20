@@ -26,10 +26,10 @@ class Admin(username: String, password: String) : User(username, password, UserT
 
     var products = mutableListOf<Product>()
 
-    fun addNewProduct(product: Product) {
-        products.add(product)
-        println("\t${userName} hat das Produkt zum Shop hinzugefügt: $product")
-    }
+//    fun addNewProduct(product: Product) {
+//        products.add(product)
+//        println("\t${userName} hat das Produkt zum Shop hinzugefügt: $product")
+//    }
 
     fun removeProduct(product: Product) {
         products.remove(product)

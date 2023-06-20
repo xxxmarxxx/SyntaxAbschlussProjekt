@@ -24,6 +24,7 @@ class Login {
         }
     }
 
+
     val produkt = mutableListOf<String>()
     val warenkorb = mutableListOf<String>()
     fun showCustomerMenu() {
@@ -33,23 +34,27 @@ class Login {
             when (readln()) {
                 "1" -> {
                     println("Kunst von Künstler kaufen")
+                    println("Wir haben Kunst dieser Künstler im Angebot: \n${Shop().kunstlerSortiment.keys} ${Shop().kunstlerSortiment.values}€")
                     val warenProdukt = readln()
                     warenkorb.add(warenProdukt)
                     println("Produkt '$warenProdukt' wurde hinzugefügt.")
                 }
+
                 "2" -> {
                     println("Kunst von Künstler aus Warenkorb löschen")
                     val loeschenProdukt = readln()
-                    if (warenkorb.contains(loeschenProdukt) {
+                    if (warenkorb.contains(loeschenProdukt)) {
                         warenkorb.remove(loeschenProdukt)
                         println("Produkt '$loeschenProdukt' wurde gelöscht.")
                     } else {
                         println("Das Produkt konnte nicht gefunden werden.")
                     }
                 }
+
                 "3" -> {
                     println("Meine Warenkorb mit: $warenkorb")
                 }
+
                 "4" -> beenden = true
                 else -> println("Ungültige Auswahl. Bitte versuchen Sie es erneut.")
             }
@@ -70,7 +75,7 @@ class Login {
 
                 "2" -> {
                     println("Geben Sie den Namen des Produkts ein, das Sie löschen möchten:")
-                    val loeschenProdukt = readLine()
+                    val loeschenProdukt = readln()
                     if (produkt.contains(loeschenProdukt)) {
                         produkt.remove(loeschenProdukt)
                         println("Produkt '$loeschenProdukt' wurde gelöscht.")
@@ -78,6 +83,7 @@ class Login {
                         println("Das Produkt konnte nicht gefunden werden.")
                     }
                 }
+
                 "3" -> {
                     println("Alle Bestellungen anzeigen")
                     println("Alle Künstler: $produkt")

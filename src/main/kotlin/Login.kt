@@ -24,7 +24,7 @@ class Login {
         }
     }
 
-
+    val shop = Shop()
     val produkt = mutableListOf<String>()
     val warenkorb = mutableListOf<String>()
     fun showCustomerMenu() {
@@ -34,7 +34,10 @@ class Login {
             when (readln()) {
                 "1" -> {
                     println("Kunst von Künstler kaufen")
-                    println("Wir haben Kunst dieser Künstler im Angebot: \n${Shop().kunstlerSortiment.keys} ${Shop().kunstlerSortiment.values}€")
+                    println("Wir haben Kunst dieser Künstler im Angebot: ")
+                    for (product in shop.productsList){
+                        product.printProduct()
+                    }
                     val warenProdukt = readln()
                     warenkorb.add(warenProdukt)
                     println("Produkt '$warenProdukt' wurde hinzugefügt.")

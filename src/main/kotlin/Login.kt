@@ -4,7 +4,7 @@ class Login {
     fun loginIn() {
         var validInput = false
         while (!validInput) {
-            println("Sind Sie ein Kunde oder ein Admin? (Geben Sie Kunde/Admin ein)")
+            println("\tSind Sie ein Kunde oder ein Admin? (Geben Sie Kunde/Admin ein)")
             val userType = readLine()
             val admin = mutableListOf<Product>()
 
@@ -19,7 +19,7 @@ class Login {
                 validInput = true
                 showAdminMenu()
             } else {
-                println("Ungültige Auswahl. Bitte versuchen Sie es erneut.")
+                println("\tUngültige Auswahl. Bitte versuchen Sie es erneut.")
             }
         }
     }
@@ -30,36 +30,36 @@ class Login {
     fun showCustomerMenu() {
         var beenden = false
         while (!beenden) {
-            println("Bitte wählen Sie eine Option: \n1. Kunst von Künstler kaufen \n2. Kunst von Künstler aus Warenkorb löschen \n3. Meine Warenkorb \n4. Beenden")
+            println("\tBitte wählen Sie eine Option: \n\t1. Kunst von Künstler kaufen \n\t2. Kunst von Künstler aus Warenkorb löschen \n\t3. Meine Warenkorb \n\t4. Beenden")
             when (readln()) {
                 "1" -> {
-                    println("Kunst von Künstler kaufen")
-                    println("Wir haben Kunst dieser Künstler im Angebot: ")
+                    println("\tKunst von Künstler kaufen")
+                    println("\tWir haben Kunst dieser Künstler im Angebot: ")
                     for (product in shop.productsList){
                         product.printProduct()
                     }
                     val warenProdukt = readln()
                     warenkorb.add(warenProdukt)
-                    println("Produkt '$warenProdukt' wurde hinzugefügt.")
+                    println("\tProdukt '$warenProdukt' wurde hinzugefügt.")
                 }
 
                 "2" -> {
-                    println("Kunst von Künstler aus Warenkorb löschen")
+                    println("\tKunst von Künstler aus Warenkorb löschen")
                     val loeschenProdukt = readln()
                     if (warenkorb.contains(loeschenProdukt)) {
                         warenkorb.remove(loeschenProdukt)
-                        println("Produkt '$loeschenProdukt' wurde gelöscht.")
+                        println("\tProdukt '$loeschenProdukt' wurde gelöscht.")
                     } else {
-                        println("Das Produkt konnte nicht gefunden werden.")
+                        println("\tDas Produkt konnte nicht gefunden werden.")
                     }
                 }
 
                 "3" -> {
-                    println("Meine Warenkorb mit: $warenkorb")
+                    println("\tMeine Warenkorb mit: $warenkorb")
                 }
 
                 "4" -> beenden = true
-                else -> println("Ungültige Auswahl. Bitte versuchen Sie es erneut.")
+                else -> println("\tUngültige Auswahl. Bitte versuchen Sie es erneut.")
             }
         }
     }
@@ -67,33 +67,33 @@ class Login {
     fun showAdminMenu() {
         var beenden = false
         while (!beenden) {
-            println("Bitte wählen Sie eine Option: \n1. Neue Kunst hinzufügen \n2. Kunst löschen \n3. Alle Bestellungen anzeigen \n4. Beenden")
+            println("\tBitte wählen Sie eine Option: \n\t1. Neue Kunst hinzufügen \n\t2. Kunst löschen \n\t3. Alle Bestellungen anzeigen \n\t4. Beenden")
             when (readln()) {
                 "1" -> {
-                    println("Neue Kunst hinzufügen")
+                    println("\tNeue Kunst hinzufügen")
                     val neueProdukt = readln()
                     produkt.add(neueProdukt)
-                    println("Produkt '$neueProdukt' wurde hinzugefügt.")
+                    println("\tProdukt '$neueProdukt' wurde hinzugefügt.")
                 }
 
                 "2" -> {
-                    println("Geben Sie den Namen des Produkts ein, das Sie löschen möchten:")
+                    println("\tGeben Sie den Namen des Produkts ein, das Sie löschen möchten:")
                     val loeschenProdukt = readln()
                     if (produkt.contains(loeschenProdukt)) {
                         produkt.remove(loeschenProdukt)
-                        println("Produkt '$loeschenProdukt' wurde gelöscht.")
+                        println("\tProdukt '$loeschenProdukt' wurde gelöscht.")
                     } else {
-                        println("Das Produkt konnte nicht gefunden werden.")
+                        println("\tDas Produkt konnte nicht gefunden werden.")
                     }
                 }
 
                 "3" -> {
-                    println("Alle Bestellungen anzeigen")
-                    println("Alle Künstler: $produkt")
+                    println("\tAlle Bestellungen anzeigen")
+                    println("\tAlle Künstler: $produkt")
                 }
 
                 "4" -> beenden = true
-                else -> println("Ungültige Auswahl. Bitte versuchen Sie es erneut.")
+                else -> println("\tUngültige Auswahl. Bitte versuchen Sie es erneut.")
             }
         }
     }

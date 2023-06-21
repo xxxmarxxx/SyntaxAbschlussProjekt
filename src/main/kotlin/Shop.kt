@@ -25,7 +25,7 @@ class Shop {
     val product23 = Product(23, "NFT", "Sergej", "the hit", 2022, 20.0, 30.0, "blablabla", 230.0, 20)
 
     //TODO weiter machen
-    var products = mutableListOf<Product>(
+    var productsList = mutableListOf<Product>(
         product1, product2, product3, product4, product5, product6,
         product7, product8, product9, product10, product11, product12, product13, product14, product15,
         product16, product17, product18, product19, product20, product21, product22, product23
@@ -33,14 +33,14 @@ class Shop {
 
 
     fun removeProduct(product: Product, admin: Admin) {
-        products.remove(product)
+        productsList.remove(product)
         println("\t${admin.userName} hat das Produkt im Shop mit Id:${product.id} entfernt: $product")
     }
 
     fun changeProduct(oldProduct: Product, newProduct: Product, admin: Admin) {
-        val index = products.indexOf(oldProduct)
+        val index = productsList.indexOf(oldProduct)
         if (index != -1) {
-            products[index] = newProduct
+            productsList[index] = newProduct
             println("\t${admin.userName} hat Produkt geändert: $oldProduct zu $newProduct")
         } else {
             println("\t Das Produkt konnte nicht gefunden werden: $oldProduct")
@@ -57,7 +57,6 @@ class Shop {
         "Van Gogh" to 10.99
 
     )
-
 
     fun categoryArts(art: String): String {
         val malerei = mutableListOf<String>("Acryl", "Aquarell", "Gouache", "Tempera", "Ölfarben")
@@ -86,19 +85,51 @@ class Shop {
         }
     }
 
-    fun suchenArtInKategorie(){
-        while (true){
+
+    fun suchenArtInKategorie() {
+        while (true) {
             try {
                 println("Wo finde ich ....")
                 val suchen = readln()
-                println(Shop().categoryArts(suchen))
+                println(categoryArts(suchen))
                 println("Die $suchen ist in der Kategorie ${categoryArts(suchen)}")
                 println("weiter suchen(j/n):")
                 val eingabe = readln()
-                if (eingabe == "n"){
+                if (eingabe == "n") {
                     break
                 }
-            } catch (e:Exception){
+            } catch (e: Exception) {
+                println("falsch")
+            }
+        }
+    }
+
+    //    fun artikels(id: Int){
+//        var products = mutableListOf<Product>(
+//            product1, product2, product3, product4, product5, product6,
+//            product7, product8, product9, product10, product11, product12, product13, product14, product15,
+//            product16, product17, product18, product19, product20, product21, product22, product23
+//        )
+//    }
+    var filterList = mutableListOf<Product>()
+    fun suchenArtInShop() {
+        while (true) {
+            try {
+                println("Wo finde ich ....")
+                val suchen = readln()
+                val art = productsList.filter { it.artist == suchen }
+                for (productVonArt in art) {
+                    productVonArt.printProduct()
+
+                }
+                filterList = art.toMutableList()
+                println("Die $suchen ist in der Kategorie")
+                println("weiter suchen(j/n):")
+                val eingabe = readln()
+                if (eingabe == "n") {
+                    break
+                }
+            } catch (e: Exception) {
                 println("falsch")
             }
         }

@@ -10,9 +10,9 @@ fun main() {
 //    ---------- LogoEND ----
 
 //    ----- START LOGIN KUNDE/ADMIN
-
+    val shop = Shop()
     Login().loginIn()
-    Shop().suchenArtInKategorie()
+    shop.suchenArtInKategorie()
 //    println(Shop().categoryArts("Acryl"))
 
 //    println("Wir haben Kunst dieser Künstler im Angebot: \n${Shop().kunstlerSortiment.keys}")

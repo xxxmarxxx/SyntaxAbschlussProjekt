@@ -7,7 +7,7 @@ class ProductAdapter(private val products: List<Product>) {
         }
     }
 }
-fun printProduct() {
+fun printProduct(eingebe: String) {
     println("  Product Id ist: ${Shop().product1.id}")
     println("  Product befindet sich in der Kategorie: ${Shop().product1.categories}")
     println("  Name der Artist ist: ${Shop().product1.artist}")
@@ -16,5 +16,8 @@ fun printProduct() {
 }
 
 fun main(){
-    printProduct()
+    println("gibt was")
+    val eingebe = readln()
+    println(Shop().product10)
+    printProduct(eingebe)
 }

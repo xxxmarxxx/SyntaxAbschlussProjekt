@@ -86,4 +86,22 @@ class Shop {
         }
     }
 
+    fun suchenArtInKategorie(){
+        while (true){
+            try {
+                println("Wo finde ich ....")
+                val suchen = readln()
+                println(Shop().categoryArts(suchen))
+                println("Die $suchen ist in der Kategorie ${categoryArts(suchen)}")
+                println("weiter suchen(j/n):")
+                val eingabe = readln()
+                if (eingabe == "n"){
+                    break
+                }
+            } catch (e:Exception){
+                println("falsch")
+            }
+        }
+    }
+
 }

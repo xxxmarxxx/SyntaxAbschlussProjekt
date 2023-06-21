@@ -1,4 +1,4 @@
-// mach linien
+// func für Linien erzeugen
 fun dotLine(zahl: Int, symbol: String) {
 //    var symbol = ""
     var index = 1
@@ -8,7 +8,7 @@ fun dotLine(zahl: Int, symbol: String) {
 
     }
 }
-
+// func für Zeichen als Linie erzeugen
 fun dotLine2(zahl: Int, symbol: String) {
 //    var symbol = ""
     var index = 1
@@ -94,32 +94,32 @@ d8'          `8b  88`YbbdP"'   88`YbbdP"'  d8'          `8b  88             "Y88
     )
 }
 
-fun categoryArts(art: String): String {
-    val malerei = mutableListOf<String>("Acryl", "Aquarell", "Gouache", "Tempera", "Ölfarben")
-    val zeichnung = mutableListOf<String>(
-        "Bleistift", "All-Stift", "Farbstift", "Pastellkreiden",
-        "Ölpastellkreiden", "Zeichenkreide", "Zeichenkohle", "Silberstift",
-        "Feder und Tusche", "Pinsel und Tusche", "Andere Zeichentechniken"
-    )
-    val drucken = mutableListOf<String>("Hochdruck", "Tiefdruck", "Lithografie", "Siebdruck")
-    val digital = mutableListOf<String>("Digitale Bildbearbeitung", "Fotografie", "NFT")
-
-    return when {
-        art in malerei -> "[ Malerei ]"
-        art in zeichnung -> "[ Zeichnung ]"
-        art in drucken -> "[ Drucken ]"
-        art in digital -> "[ Digital ]"
-        else -> "Ungültiger Art"
-    }
-}
+//fun categoryArts(art: String): String {
+//    val malerei = mutableListOf<String>("Acryl", "Aquarell", "Gouache", "Tempera", "Ölfarben")
+//    val zeichnung = mutableListOf<String>(
+//        "Bleistift", "All-Stift", "Farbstift", "Pastellkreiden",
+//        "Ölpastellkreiden", "Zeichenkreide", "Zeichenkohle", "Silberstift",
+//        "Feder und Tusche", "Pinsel und Tusche", "Andere Zeichentechniken"
+//    )
+//    val drucken = mutableListOf<String>("Hochdruck", "Tiefdruck", "Lithografie", "Siebdruck")
+//    val digital = mutableListOf<String>("Digitale Bildbearbeitung", "Fotografie", "NFT")
+//
+//    return when {
+//        art in malerei -> "[ Malerei ]"
+//        art in zeichnung -> "[ Zeichnung ]"
+//        art in drucken -> "[ Druck ]"
+//        art in digital -> "[ Digital ]"
+//        else -> "Ungültiger Art"
+//    }
+//}
 
 fun category(arts: MutableList<String>) {
     val name = "Zeichnung"
     println("${name.uppercase()}:")
     println("--------")
     for (art in arts) {
-        val jahreszeit = categoryArts(art)
-        if (jahreszeit == "[ Zeichnung ]") {
+        val kategorie = Shop().categoryArts(art)
+        if (kategorie == "[ Zeichnung ]") {
             println(art)
         }
     }
@@ -137,7 +137,7 @@ fun listing(arts: MutableList<String>) {
 
 fun allArts(arts: MutableList<String>) {
     for (art in arts) {
-        val alleArten = categoryArts(art)
+        val alleArten = Shop().categoryArts(art)
         println("* $art befindet sich in der -> $alleArten")
     }
 }
@@ -156,11 +156,11 @@ fun escapedCharakters() {
 fun main() {
     escapedCharakters()
 }
-
+// für color in konsole start
 fun changeConsoleColor(colorCode: String) {
     print(colorCode)
 }
-
+// für color in konsole end
 fun resetConsoleColor() {
     print("\u001B[0m")
 }

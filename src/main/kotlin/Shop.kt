@@ -45,17 +45,6 @@ class Shop {
             println("\t Das Produkt konnte nicht gefunden werden: $oldProduct")
         }
     }
-//
-//    val kunstlerSortiment = mutableMapOf(
-//        "Dali" to 900.00,
-//        "Modigliani" to 500.00,
-//        "Picasso" to 700.00,
-//        "Schiele" to 1700.00,
-//        "Beksinski" to 1400.00,
-//        "Banksy" to 10.99,
-//        "Van Gogh" to 10.99
-//
-//    )
 
     fun categoryArts(art: String): String {
         val malerei = mutableListOf<String>("Acryl", "Aquarell", "Gouache", "Tempera", "Ölfarben")
@@ -89,6 +78,7 @@ class Shop {
         while (true) {
             try {
                 println("\tWo finde ich ....")
+                abstandUnten(3)
                 val suchen = readln()
                 println(categoryArts(suchen))
                 println("\t$suchen ist in der Kategorie ${categoryArts(suchen)}")
@@ -109,6 +99,7 @@ class Shop {
         while (true) {
             try {
                 println("\tWo finde ich ....")
+                abstandUnten(3)
                 val suchen = readln()
                 val art = productsList.filter { it.artist == suchen }
                 for (productVonArt in art) {

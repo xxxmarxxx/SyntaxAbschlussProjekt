@@ -2,33 +2,21 @@ import onbording.onBoarding
 
 fun main() {
 
-//    ---------- START-logo
+//    ---------- START LOGO
     onBoarding()
     println()
     abstandUnten(3)
-//    ---------- LogoEND ----
+//    ---------- END LOGO ----
 
 //    ----- START LOGIN KUNDE/ADMIN
-    val shop = Shop()
+//    val shop = Shop()
     Login().loginIn()
-//    println(Shop().categoryArts("Acryl"))
-
-//    shop.suchenArtInKategorie()
-//    shop.suchenArtInShop()
+//    ----- END LOGIN
     abstandUnten(5)
 
-    println("\t\tVielen Dank für den Besuch der Galerie")
+    dankSage()
     colorGrafik()
     adresse()
     abstandUnten(10)
-//    ----- END LOGIN
-
-
-//    println("Gib name Admin oder Kunde ein")
-//    Menu().menu()
-
-
-//    Menu().printMenu(UserType.ADMIN)
-//    ------ END
 
 }

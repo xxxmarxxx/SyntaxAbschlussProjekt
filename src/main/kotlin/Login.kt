@@ -1,7 +1,7 @@
 import java.util.*
 
 class Login {
-//    Login Admin/Kunde mit valid
+    //    Login Admin/Kunde mit valid
     fun loginIn() {
         var validInput = false
         while (!validInput) {
@@ -18,7 +18,7 @@ class Login {
                 val admin = Admin("Admin", "pass")
                 admin.login()
                 validInput = true
-                showAdminMenu()
+                showAdminMenu(shop = Shop())
             } else {
                 println("\tUngültige Auswahl. Bitte versuchen Sie es erneut.")
             }
@@ -70,17 +70,21 @@ class Login {
 //    }
 
 
-
     fun showCustomerMenu(shop: Shop) { // Passing Shop object
         val warenkorb = mutableListOf<Product>()
         var beenden = false
         while (!beenden) {
-            println("\tBitte wählen Sie eine Option: \n\t1. Kunst von Künstler kaufen \n\t2. Kunst von Künstler aus Warenkorb löschen \n\t3. Meine Warenkorb \n\t4. Beenden")
+            println("\tBitte wählen Sie eine Option: " +
+                    "\n\t1. Kunst von Künstler kaufen " +
+                    "\n\t2. Kunst von Künstler aus Warenkorb löschen " +
+                    "\n\t3. Meine Warenkorb " +
+                    "\n\t4. Suchen" +
+                    "\n\t5. Beenden")
             when (readln()) {
                 "1" -> {
                     println("\tKunst von Künstler kaufen")
                     println("\tWir haben Kunst dieser Künstler im Angebot: ")
-                    for (product in shop.productsList){
+                    for (product in shop.productsList) {
                         product.printProduct()
                     }
                     val warenProduktId = readln().toIntOrNull()
@@ -121,22 +125,29 @@ class Login {
                     }
                 }
 
-                "4" -> beenden = true
+                "4" -> {
+                    shop.suchenArtInShop()
+                }
+
+                "5" -> beenden = true
                 else -> println("\tUngültige Auswahl. Bitte versuchen Sie es erneut.")
             }
         }
     }
 
 
-
-
-
     //    func Admin Menu
-    fun showAdminMenu() {
+    fun showAdminMenu(shop: Shop) {
         val produkt = mutableListOf<String>()
         var beenden = false
         while (!beenden) {
-            println("\tBitte wählen Sie eine Option: \n\t1. Neue Kunst hinzufügen \n\t2. Kunst löschen \n\t3. Alle Bestellungen anzeigen \n\t4. Beenden")
+            println(
+                "\tBitte wählen Sie eine Option: " +
+                        "\n\t1. Neue Kunst hinzufügen " +
+                        "\n\t2. Kunst löschen " +
+                        "\n\t3. Alle Bestellungen anzeigen " +
+                        "\n\t4. Beenden"
+            )
             when (readln()) {
                 "1" -> {
                     println("\tNeue Kunst hinzufügen")
@@ -160,6 +171,7 @@ class Login {
                     println("\tAlle Bestellungen anzeigen")
                     println("\tAlle Künstler: $produkt")
                 }
+
 
                 "4" -> beenden = true
                 else -> println("\tUngültige Auswahl. Bitte versuchen Sie es erneut.")

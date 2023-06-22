@@ -3,20 +3,24 @@ import onbording.onBoarding
 fun main() {
 
 //    ---------- START-logo
-    changeConsoleColor("\u001B[32m")
     onBoarding()
-    resetConsoleColor()
     println()
+    abstandUnten(3)
 //    ---------- LogoEND ----
 
 //    ----- START LOGIN KUNDE/ADMIN
     val shop = Shop()
     Login().loginIn()
-    shop.suchenArtInKategorie()
 //    println(Shop().categoryArts("Acryl"))
 
-//    println("Wir haben Kunst dieser Künstler im Angebot: \n${Shop().kunstlerSortiment.keys}")
-    println("Danke für besuch bei appArt")
+//    shop.suchenArtInKategorie()
+//    shop.suchenArtInShop()
+    abstandUnten(5)
+
+    println("\t\tVielen Dank für den Besuch der Galerie")
+    colorGrafik()
+    adresse()
+    abstandUnten(10)
 //    ----- END LOGIN
 
 

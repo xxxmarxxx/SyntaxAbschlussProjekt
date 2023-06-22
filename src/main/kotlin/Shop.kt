@@ -31,20 +31,20 @@ class Shop {
         product16, product17, product18, product19, product20, product21, product22, product23
     )
 
-    fun removeProduct(product: Product, admin: Admin) {
-        productsList.remove(product)
-        println("\t${admin.userName} hat das Produkt im Shop mit Id:${product.id} entfernt: $product")
-    }
+//    fun removeProduct(product: Product, admin: Admin) {
+//        productsList.remove(product)
+//        println("\t${admin.userName} hat das Produkt im Shop mit Id:${product.id} entfernt: $product")
+//    }
 
-    fun changeProduct(oldProduct: Product, newProduct: Product, admin: Admin) {
-        val index = productsList.indexOf(oldProduct)
-        if (index != -1) {
-            productsList[index] = newProduct
-            println("\t${admin.userName} hat Produkt geändert: $oldProduct zu $newProduct")
-        } else {
-            println("\t Das Produkt konnte nicht gefunden werden: $oldProduct")
-        }
-    }
+//    fun changeProduct(oldProduct: Product, newProduct: Product, admin: Admin) {
+//        val index = productsList.indexOf(oldProduct)
+//        if (index != -1) {
+//            productsList[index] = newProduct
+//            println("\t${admin.userName} hat Produkt geändert: $oldProduct zu $newProduct")
+//        } else {
+//            println("\t Das Produkt konnte nicht gefunden werden: $oldProduct")
+//        }
+//    }
 
     fun categoryArts(art: String): String {
         val malerei = mutableListOf<String>("Acryl", "Aquarell", "Gouache", "Tempera", "Ölfarben")

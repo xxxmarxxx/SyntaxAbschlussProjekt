@@ -1,3 +1,4 @@
+//  class Product als Künstler und seine kunstwerk
 data class Product(
     val id: Int,
     val categories: String,
@@ -10,7 +11,7 @@ data class Product(
     val price: Double,
     val edition: Int,
 ) {
-
+//              ----   version 1.00
 //    fun printProduct() {
 //        changeConsoleColor("\u001B[36m")
 //        println("\t****************************************")
@@ -28,6 +29,7 @@ data class Product(
 //        resetConsoleColor()
 //    }
 
+//              ---   version 1.01
     fun printProduct() {
 println()
         changeConsoleColor("\u001B[38;5;240m")

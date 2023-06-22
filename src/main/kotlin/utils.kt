@@ -8,6 +8,11 @@ fun dotLine(zahl: Int, symbol: String) {
 
     }
 }
+fun abstandUnten2() {
+    repeat(5) {
+        println()
+    }
+}
 
 // print abstand links
 fun printWithIndent(indent: Int, message: String) {
@@ -88,7 +93,7 @@ d8'          `8b  88`YbbdP"'   88`YbbdP"'  d8'          `8b  88            "Y888
 
 // grafik mit color
 fun colorGrafik() {
-    val redColor = "\u001B[31m" // Kolor czerwony
+    val redColor = "\u001B[38;5;245m" // Kolor czerwony
     val resetColor = "\u001B[0m" // Resetowanie kolorów
 
     println(
@@ -113,8 +118,14 @@ fun colorGrafik() {
 fun adresse(){
     println()
     println("\t\tSyntax Projekt 2023")
+    println("\t\tappArt in Kotlin")
+    println("\t\tVersion 1.01")
     println("\t\tMariusz Brainard")
     println("\t\t12163 Berlin")
+}
+
+fun dankSage(){
+    println("\t\tVielen Dank für den Besuch der Galerie")
 }
 
 fun category(arts: MutableList<String>) {

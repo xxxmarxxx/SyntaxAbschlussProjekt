@@ -17,20 +17,21 @@ class Kunde(username: String, password: String) : User(username, password, UserT
         }
     }
 
+//TODO
 //    val kontoStand: Double = 0.0
 //    val warenkorb = mutableListOf<Product>()
 //
-//    //
+//TODO
 //    fun zumWarenkorbHinzufuegen(product: Product) {
 //        warenkorb.add(product)
 //        println("\t$userName hat das Produkt \"${product.artist}\" zum Warenkorb hinzugefügt.")
 //        println("\t$userName hat das Produkt \"${product.artist}\" zum Warenkorb hinzugefügt für ${product.price}€.")
 //    }
-//
+//TODO
 //    fun ausWarenkorbLoeschen(product: Product) {
 //        println("\t$userName hat das Produkt \"${product.artist}\" vom Warenkorb entfernt.")
 //    }
-//
+//TODO
 //    fun gesamtPreisWarenkorb(): Double {
 //        var gesamtPreis = 0.0
 //        for (product in warenkorb) {

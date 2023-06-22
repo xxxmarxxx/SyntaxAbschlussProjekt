@@ -25,62 +25,22 @@ class Login {
         }
     }
 
-//    func Kunde Menu
-//    val shop = Shop()
-//    val produkt = mutableListOf<String>()
-//    val warenkorb = mutableListOf<Product>()
-//    fun showCustomerMenu() {
-//        var beenden = false
-//        while (!beenden) {
-//            println("\tBitte wählen Sie eine Option: \n\t1. Kunst von Künstler kaufen \n\t2. Kunst von Künstler aus Warenkorb löschen \n\t3. Meine Warenkorb \n\t4. Beenden")
-//            abstandUnten(3)
-//            when (readln()) {
-//                "1" -> {
-//                    println("\tKunst von Künstler kaufen")
-//                    println("\tWir haben Kunst dieser Künstler im Angebot: ")
-//                    for (product in shop.productsList){
-//                        product.printProduct()
-//
-//                    }
-//                    val warenProdukt = readln()
-//                    warenkorb.add(warenProdukt)
-//                    println("\tProdukt '$warenProdukt' wurde hinzugefügt.")
-//                }
-//
-//                "2" -> {
-//                    println("\tKunst von Künstler aus Warenkorb löschen")
-//                    val loeschenProdukt = readln()
-//                    if (warenkorb.contains(loeschenProdukt)) {
-//                        warenkorb.remove(loeschenProdukt)
-//                        println("\tProdukt '$loeschenProdukt' wurde gelöscht.")
-//                    } else {
-//                        println("\tDas Produkt konnte nicht gefunden werden.")
-//                    }
-//                }
-//
-//                "3" -> {
-//                    println("\tMeine Warenkorb mit: $warenkorb")
-//                }
-//
-//                "4" -> beenden = true
-//                else -> println("\tUngültige Auswahl. Bitte versuchen Sie es erneut.")
-//            }
-//        }
-//    abstandUnten(3)
-//    }
-
-
-    fun showCustomerMenu(shop: Shop) { // Passing Shop object
+    private fun showCustomerMenu(shop: Shop) { // Passing Shop object
         val warenkorb = mutableListOf<Product>()
         var beenden = false
         while (!beenden) {
-            println("\tBitte wählen Sie eine Option: " +
-                    "\n\t1. Kunst von Künstler kaufen " +
-                    "\n\t2. Kunst von Künstler aus Warenkorb löschen " +
-                    "\n\t3. Meine Warenkorb " +
-                    "\n\t4. Suchen" +
-                    "\n\t5. Beenden")
+            println(
+                "\tBitte wählen Sie eine Option: " +
+                        "\n\t1. Kunst von Künstler kaufen " +
+                        "\n\t2. Kunst von Künstler aus Warenkorb löschen " +
+                        "\n\t3. Meine Warenkorb " +
+                        "\n\t4. Künstler suchen" +
+                        "\n\t5. Beenden"
+
+            )
+            abstandUnten2()
             when (readln()) {
+
                 "1" -> {
                     println("\tKunst von Künstler kaufen")
                     println("\tWir haben Kunst dieser Künstler im Angebot: ")
@@ -119,7 +79,7 @@ class Login {
                 }
 
                 "3" -> {
-                    println("\tMeine Warenkorb mit: ")
+                    println("\tMeine ausgewählten Kunstwerke im Warenkorb: ")
                     for (product in warenkorb) {
                         product.printProduct()
                     }
@@ -131,13 +91,14 @@ class Login {
 
                 "5" -> beenden = true
                 else -> println("\tUngültige Auswahl. Bitte versuchen Sie es erneut.")
+
             }
         }
+      abstandUnten2()
     }
 
-
-    //    func Admin Menu
-    fun showAdminMenu(shop: Shop) {
+    //    func ADMIN LOGIN/MENU
+    private fun showAdminMenu(shop: Shop) {
         val produkt = mutableListOf<String>()
         var beenden = false
         while (!beenden) {
@@ -172,13 +133,11 @@ class Login {
                     println("\tAlle Künstler: $produkt")
                 }
 
-
                 "4" -> beenden = true
                 else -> println("\tUngültige Auswahl. Bitte versuchen Sie es erneut.")
             }
         }
-        abstandUnten(3)
-    }
 
+    }
 
 }

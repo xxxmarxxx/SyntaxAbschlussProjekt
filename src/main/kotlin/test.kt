@@ -11,10 +11,20 @@ fun main() {
 //    leerZeichen("test")
 //    leerZeichen2("test")
 //    colorGrafik()
+//    println(Shop().categoryArts("Acryl"))
+
+//    shop.suchenArtInKategorie()
+//    shop.suchenArtInShop()
+
+//    println("Gib name Admin oder Kunde ein")
+//    Menu().menu()
+//    Menu().printMenu(UserType.ADMIN)
+
+
     escapedCharakters()
     println("sdsdsdsdsd")
     leerZeichen2("20")
-    dotLine(10,"3 ")
+    dotLine(10, "3 ")
 
     // Print some text
     println("Hello, World!")

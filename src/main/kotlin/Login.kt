@@ -89,12 +89,23 @@ class Login {
                     shop.suchenArtInShop()
                 }
 
-                "5" -> beenden = true
+                "5" -> {
+                    println("Sie wurde jetzt Ausgeloggt.")
+                    println("Möchten Sie den Shop verlassen oder sich wieder anmelden?")
+//                    beenden = true
+                    val choice = readln()
+                    if (choice == "n") {
+                        loginIn()
+                    } else {
+                        beenden = true
+                    }
+                }
+
                 else -> println("\tUngültige Auswahl. Bitte versuchen Sie es erneut.")
 
             }
         }
-      abstandUnten2()
+        abstandUnten2()
     }
 
     //    func ADMIN LOGIN/MENU

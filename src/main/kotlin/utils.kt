@@ -8,6 +8,16 @@ fun dotLine(zahl: Int, symbol: String) {
 
     }
 }
+
+// print abstand links
+fun printWithIndent(indent: Int, message: String) {
+    for (i in 0 until indent) {
+        print(" ") // Druckt ein Leerzeichen
+    }
+    println(message) // Druckt die Nachricht
+}
+// printWithIndent(5, "Hallo, Welt!") // Druckt "     Hallo, Welt!"
+
 // func für Zeichen als Linie erzeugen
 fun dotLine2(zahl: Int, symbol: String) {
 //    var symbol = ""
@@ -17,6 +27,12 @@ fun dotLine2(zahl: Int, symbol: String) {
         println()
         index++
     }
+}
+
+// Abstand von der Unterkante der Konsole
+fun abstandUnten(abstand: Int) {
+    for (i in abstand downTo 1)
+        println()
 }
 
 
@@ -41,7 +57,7 @@ fun imageGrafik() {
         """
     ......................•••••••••••••••••••••••••.......................
     ......................|                       |.......................
-    ......................|    •STEICHEL Z00•     |.......................
+    ......................|    •appArt GALERIE•     |.......................
     ......................|       WELCOME :)      |.......................
     ......................|                       |.......................
     ......................|                       |.......................
@@ -78,40 +94,28 @@ fun colorGrafik() {
     println(
         """
        $redColor
-################################################################################
-       db                                         db                                    
-      d88b                                       d88b                      ,d     
-     d8'`8b                                     d8'`8b                     88     
-    d8'  `8b      8b,dPPYba,   8b,dPPYba,      d8'  `8b      8b,dPPYba,  MM88MMM  
-   d8YaaaaY8b     88P'    "8a  88P'    "8a    d8YaaaaY8b     88P'   "Y8    88     
-  d8""${'"'}${'"'}${'"'}${'"'}${'"'}${'"'}8b    88       d8  88       d8   d8""${'"'}${'"'}${'"'}${'"'}${'"'}${'"'}8b    88            88     
- d8'        `8b   88b,   ,a8"  88b,   ,a8"  d8'        `8b   88            88,    
-d8'          `8b  88`YbbdP"'   88`YbbdP"'  d8'          `8b  88             "Y888  
-                  88           88                                                 
-                  88           88     
-#################################################################################                                                              
+    ################################################################################
+           db                                         db                                    
+          d88b                                       d88b                      ,d     
+         d8'`8b                                     d8'`8b                     88     
+        d8'  `8b      8b,dPPYba,   8b,dPPYba,      d8'  `8b      8b,dPPYba,  MM88MMM  
+       d8YaaaaY8b     88P'    "8a  88P'    "8a    d8YaaaaY8b     88P'   "Y8    88     
+      d8""${'"'}${'"'}${'"'}${'"'}${'"'}${'"'}8b    88       d8  88       d8   d8""${'"'}${'"'}${'"'}${'"'}${'"'}${'"'}8b    88            88     
+     d8'        `8b   88b,   ,a8"  88b,   ,a8"  d8'        `8b   88            88,    
+    d8'          `8b  88`YbbdP"'   88`YbbdP"'  d8'          `8b  88             "Y888  
+                      88           88                                                 
+                      88           88     
+    #################################################################################                                                              
         """.trimIndent() + resetColor
     )
 }
 
-//fun categoryArts(art: String): String {
-//    val malerei = mutableListOf<String>("Acryl", "Aquarell", "Gouache", "Tempera", "Ölfarben")
-//    val zeichnung = mutableListOf<String>(
-//        "Bleistift", "All-Stift", "Farbstift", "Pastellkreiden",
-//        "Ölpastellkreiden", "Zeichenkreide", "Zeichenkohle", "Silberstift",
-//        "Feder und Tusche", "Pinsel und Tusche", "Andere Zeichentechniken"
-//    )
-//    val drucken = mutableListOf<String>("Hochdruck", "Tiefdruck", "Lithografie", "Siebdruck")
-//    val digital = mutableListOf<String>("Digitale Bildbearbeitung", "Fotografie", "NFT")
-//
-//    return when {
-//        art in malerei -> "[ Malerei ]"
-//        art in zeichnung -> "[ Zeichnung ]"
-//        art in drucken -> "[ Druck ]"
-//        art in digital -> "[ Digital ]"
-//        else -> "Ungültiger Art"
-//    }
-//}
+fun adresse(){
+    println()
+    println("\t\tSyntax Projekt 2023")
+    println("\t\tMariusz Brainard")
+    println("\t\t12163 Berlin")
+}
 
 fun category(arts: MutableList<String>) {
     val name = "Zeichnung"
@@ -153,14 +157,18 @@ fun escapedCharakters() {
     println("\t8 to jest zeileumbruch\\ \r i dalej po")
 }
 
-fun main() {
-    escapedCharakters()
-}
+
+
 // für color in konsole start
 fun changeConsoleColor(colorCode: String) {
     print(colorCode)
 }
+
 // für color in konsole end
 fun resetConsoleColor() {
     print("\u001B[0m")
+}
+
+fun main() {
+    escapedCharakters()
 }

@@ -18,25 +18,25 @@ class Kunde(username: String, password: String) : User(username, password, UserT
     }
 
 //    val kontoStand: Double = 0.0
-    val warenkorb = mutableListOf<Product>()
-
-    //
-    fun zumWarenkorbHinzufuegen(product: Product) {
-        warenkorb.add(product)
-        println("\t$userName hat das Produkt \"${product.artist}\" zum Warenkorb hinzugefügt.")
-        println("\t$userName hat das Produkt \"${product.artist}\" zum Warenkorb hinzugefügt für ${product.price}€.")
-    }
-
-    fun ausWarenkorbLoeschen(product: Product) {
-        println("\t$userName hat das Produkt \"${product.artist}\" vom Warenkorb entfernt.")
-    }
-
-    fun gesamtPreisWarenkorb(): Double {
-        var gesamtPreis = 0.0
-        for (product in warenkorb) {
-            gesamtPreis += product.price
-        }
-        println("\tDer Gesamtpreis des Warenkorbs von $userName ist $gesamtPreis.")
-        return gesamtPreis
-    }
+//    val warenkorb = mutableListOf<Product>()
+//
+//    //
+//    fun zumWarenkorbHinzufuegen(product: Product) {
+//        warenkorb.add(product)
+//        println("\t$userName hat das Produkt \"${product.artist}\" zum Warenkorb hinzugefügt.")
+//        println("\t$userName hat das Produkt \"${product.artist}\" zum Warenkorb hinzugefügt für ${product.price}€.")
+//    }
+//
+//    fun ausWarenkorbLoeschen(product: Product) {
+//        println("\t$userName hat das Produkt \"${product.artist}\" vom Warenkorb entfernt.")
+//    }
+//
+//    fun gesamtPreisWarenkorb(): Double {
+//        var gesamtPreis = 0.0
+//        for (product in warenkorb) {
+//            gesamtPreis += product.price
+//        }
+//        println("\tDer Gesamtpreis des Warenkorbs von $userName ist $gesamtPreis.")
+//        return gesamtPreis
+//    }
 }

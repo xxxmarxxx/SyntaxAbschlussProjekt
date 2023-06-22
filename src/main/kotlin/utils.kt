@@ -168,8 +168,6 @@ fun escapedCharakters() {
     println("\t8 to jest zeileumbruch\\ \r i dalej po")
 }
 
-
-
 // für color in konsole start
 fun changeConsoleColor(colorCode: String) {
     print(colorCode)

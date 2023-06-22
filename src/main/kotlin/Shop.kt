@@ -98,7 +98,7 @@ class Shop {
     fun suchenArtInShop() {
         while (true) {
             try {
-                println("\tWo finde ich ....")
+                println("\tSuche nach einem Künstler - Name eingeben")
                 abstandUnten(3)
                 val suchen = readln()
                 val art = productsList.filter { it.artist == suchen }
@@ -107,8 +107,8 @@ class Shop {
 
                 }
                 filterList = art.toMutableList()
-                println("\t$suchen ist in der Kategorie")
-                println("\tweiter suchen(j/n):")
+                println("\tAlle Kunstwerke von: $suchen")
+                println("\tWeiter suchen (j/n):")
                 val eingabe = readln()
                 if (eingabe == "n") {
                     break

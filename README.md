@@ -84,4 +84,4 @@ Viel Spaß beim Verwalten Ihrer Kunstgalerie mit Kotlin!
 
 ____
 
-![Class Diagram](Praxis.png)
+![Class Diagram](diagram.png)

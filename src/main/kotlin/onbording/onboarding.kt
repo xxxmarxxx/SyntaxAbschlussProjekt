@@ -1,8 +1,8 @@
 package onbording
 
 fun onBoarding(){
-    val textColor = "\u001B[32m"  //orange
-    val background = "\u001B[40m" // Kolor zielony
+    val textColor = "\u001B[38;5;245m"  //orange
+    val background = "\u001B[48;5;240m" // Kolor zielony
     val resetColor = "\u001B[0m" // Resetowanie kolorów
 
     println( background + textColor +

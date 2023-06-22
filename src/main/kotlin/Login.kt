@@ -7,7 +7,6 @@ class Login {
         while (!validInput) {
             println("\tSind Sie ein Kunde oder ein Admin? (Geben Sie Kunde/Admin ein)")
             val userType = readln()
-            val admin = mutableListOf<Product>()
 
             if (userType == "Kunde" || userType == "kunde") {
                 val kunde = Kunde("Kunde", "pass")
@@ -90,8 +89,8 @@ class Login {
                 }
 
                 "5" -> {
-                    println("Sie wurde jetzt Ausgeloggt.")
-                    println("Möchten Sie den Shop verlassen oder sich wieder anmelden?")
+                    println("\tSie wurde jetzt Ausgeloggt.")
+                    println("\tMöchten Sie den Shop verlassen oder sich wieder anmelden?")
 //                    beenden = true
                     val choice = readln()
                     if (choice == "n") {
@@ -107,7 +106,7 @@ class Login {
         }
         abstandUnten2()
     }
-
+//TODO as showCustomerMenu!!
     //    func ADMIN LOGIN/MENU
     private fun showAdminMenu(shop: Shop) {
         val produkt = mutableListOf<String>()
